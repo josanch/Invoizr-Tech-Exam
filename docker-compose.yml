@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  code-test-db:
+    image: postgres:15
+    container_name: postgres-db-code-test
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: puseradm
+      POSTGRES_PASSWORD: wAXBy8EjLL3256V
+      POSTGRES_DB: code-test-db
+    volumes:
+      - postgres-data-code-test:/var/lib/postgresql/data
+volumes:
+  postgres-data-code-test:
