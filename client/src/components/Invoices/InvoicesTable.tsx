@@ -88,8 +88,9 @@ const Invoices: React.FC = () => {
   }
 
   return (<>
-    { invoices.length > 0 &&     <div className="w-full flex justify-center">
-      <div className="w-[95%] overflow-x-auto bg-white shadow-md rounded-lg">
+    { invoices.length > 0 && 
+      <div className="w-full flex justify-center">
+        <div className="w-[95%] overflow-x-auto bg-white shadow-md rounded-lg">
         <table className="w-full table-auto border-collapse border border-gray-200">
           <thead className="bg-blue-100">
             <tr>
@@ -102,11 +103,11 @@ const Invoices: React.FC = () => {
               <th className="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-white bg-blue-400">Paid</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="invoices-container">
             {invoices.map((invoice) => (
-              <tr
+              <tr                 
                 key={invoice.id}  
-                className="hover:bg-gray-100"
+                className="invoice-item hover:bg-gray-100"
                 onClick={() => handleRowClick(invoice.id)}
               >
                 <td className="border border-gray-300 px-4 py-2 text-sm text-gray-700">{invoice.id}</td>
@@ -144,7 +145,13 @@ const InvoiceDetailsContent: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mb-6 text-center">Invoice Details</h2>
+      <h2 className="text-2xl font-extrabold
+            mb-6 text-center
+            bg-gradient-to-b
+           from-[#4A90E2] to-[#A3C7F7]
+           text-white py-6
+           flex items-center
+           justify-center h-14">Invoice Details</h2>
       <table className="w-full table-auto border-collapse border border-gray-300">
         <tbody>
           <tr>

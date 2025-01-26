@@ -1,5 +1,12 @@
 # Server-Side README
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Setup Instructions Condensed](#setup-instructions-condensed)
+
 ## Overview
 This is the server-side application for the **Invoyce Tech Exam** project. Built using **Node.js** and **NestJS**, it provides a RESTful API for managing users and invoices. The server interacts with a **PostgreSQL** database through **Prisma ORM**.
 
@@ -9,20 +16,25 @@ This is the server-side application for the **Invoyce Tech Exam** project. Built
 - **Validation:** DTO validation using **class-validator** and **class-transformer**.
 - **Dockerized Environment:** Easily deployable using Docker.
 
-## Limitations
-While the majority of the project is complete and fully functional, the following features were not successfully implemented due to time constraints. However, they can be added with additional time:
+### API Endpoints
 
-1. **Authentication via JWT with Passport.js**: The authentication module was scaffolded but requires further work to fully implement.
-2. **Client-Side Details Request by ID**: The server-side endpoint exists but needs adjustments to correctly handle detailed requests for specific invoice IDs from the client.
+#### Authentication
+- `POST /auth/login`: Authenticate a user.
 
-Despite these omissions, the rest of the solution works as intended and meets the project requirements.
+#### Invoices
+- `GET /invoices`: Retrieve all invoices.
+- `GET /invoices/:id`: Retrieve details of a specific invoice.
+
+#### Users
+- `POST`: /users: Create new user
+- `GET /users`: Retrieve all users
+- `GET /users/:id`: Retrieve user by id
 
 ## Installation
 
 ### Prerequisites
 - Node.js (v22+)
 - Docker & Docker Compose
-
 
 ### Steps
 1. Clone the repository:
@@ -66,7 +78,18 @@ Despite these omissions, the rest of the solution works as intended and meets th
    
    ```
 
-## Server Setup Instructions Condensed
+### Notes
+- Ensure the `.env` file is properly configured before running the server.
+- Error handling has been implemented minimally to meet project requirements.
+
+### Docker Setup
+
+1. Run the Docker container:
+   ```bash
+   docker run -p 5432:5432 postgress:15
+   ```
+
+## Setup Instructions Condensed
 
 ### Steps
 
@@ -79,26 +102,6 @@ Despite these omissions, the rest of the solution works as intended and meets th
 7. Run `npm run db:seedInvoices` to seed invoice data.
 8. Start the server with `npm run start:dev`.
 
-The server will be running at `http://localhost:3000`.
-
-## API Endpoints
-
-### Authentication
-- `POST /auth/login`: Authenticate a user.
-
-### Invoices
-- `GET /invoices`: Retrieve all invoices.
-- `GET /invoices/:id`: Retrieve details of a specific invoice.
-
-### Users
-- `POST`: /users: Create new user
-- `GET /users`: Retrieve all users
-- `GET /users/:id`: Retrieve user by id
-
-### Users (Seed Data Example)
-| Username              | Password   |
-|-----------------------|------------|
-| `john@example.com`    | `1234567`  |
 
 ## Project Structure
 ```plaintext
@@ -110,21 +113,16 @@ src/
 ├── main.ts              # Entry point for the application
 └── app.module.ts        # Root module for the application
 ```
+### Users (Seed Data Example)
+| Username              | Password   |
+|-----------------------|------------|
+| `john@example.com`    | `1234567`  |
 
-## Docker Setup
 
-2. Run the Docker container:
-   ```bash
-   docker run -p 5432:5432 postgress:15
-   ```
+## Project Notes
+- The server will be running at `http://localhost:3000`.
 
-## Notes
-- Ensure the `.env` file is properly configured before running the server.
-- Error handling has been implemented minimally to meet project requirements.
-
-# Project Notes
-
-## PostgreSQL Notes
+### PostgreSQL Notes
       POSTGRES_USER: puseradm
       POSTGRES_PASSWORD: wAXBy8EjLL3256V
       POSTGRES_DB: code-test-db

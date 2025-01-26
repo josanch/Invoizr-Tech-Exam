@@ -8,6 +8,8 @@ This is the client-side application for the project, built using ReactJS with Ty
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Features](#features)
+- [Design Guide](#design-guide)
+- [Limitations](#limitations)
 
 ## Getting Started
 
@@ -40,4 +42,28 @@ Ensure you have the following installed on your machine:
 - https://localhost:5173
 
 ## Features
-- Ensure the server is running to fetch data from the backend API.
+- Dashboard
+    - User counts
+    - Invoice counts
+- 404 catch all
+- Register new uses
+- Logged / logged out indicator
+- Invoices table
+    - invoice details in modal window
+- Playwright Test(s) - located at root of project
+    - Test to log in and check if the invoice page has invoices
+
+## Design Guide
+
+**Colors**
+- Yellow accent: #FFA015
+- Left Sidebar Graadiant: #4A90E2, #A3C7F7 
+
+## Limitations
+While the majority of the project is complete and fully functional, the following features were not successfully implemented due to time constraints. However, they can be added with additional time:
+
+- search not implemented
+- alerts not implemented
+- theme dark / white not implemented
+
+Despite these omissions, the rest of the solution works as intended and meets the project requirements.

@@ -1,0 +1,25 @@
+{
+  "name": "invoyceappassessment",
+  "version": "1.0.0",
+  "description": "This repository contains both the server-side and client-side applications for the project. Follow the instructions below to set up and run the entire project.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josanch/Invoizr-Tech-Exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josanch/Invoizr-Tech-Exam/issues"
+  },
+  "homepage": "https://github.com/josanch/Invoizr-Tech-Exam#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.10.10"
+  }
+}
