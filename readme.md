@@ -46,7 +46,7 @@ root/
    ![Login Page](./screenCaptures/Login_Page.png)
 
 1. **Invoices Page**
-   ![Invoice Page](./screenCaptures/Invoice_Page.png)
+   ![Invoice Page](./screenCaptures/Invoices_Page.png)
 
 1. **Invoice Details Modal**
    ![Invoice Details Modal](./screenCaptures/Invoices_Detailed_Modal.png)
