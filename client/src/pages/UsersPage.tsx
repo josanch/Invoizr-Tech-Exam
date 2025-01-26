@@ -98,7 +98,7 @@ const UsersPage: React.FC = () => {
   if (isLoading) {
     return (
       <Layout>
-        <p>Loading Users...</p>
+        <p className='text-3xl font-bold text-center text-gray-800 mb-4'>Loading Users...</p>
       </Layout>
     );
   }

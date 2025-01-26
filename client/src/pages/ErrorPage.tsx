@@ -14,10 +14,11 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ message, redirectTo }) => {
     if(redirectTo === '/')
       {
         setRedirectLabel('Got to Home');
-      } 
+      } else {
     
       if (redirectLabel === '' || redirectLabel === null || redirectLabel === undefined) {
         setRedirectLabel('Go to Login');
+      }
       }
   }, [])
 
