@@ -1,6 +1,7 @@
 // src/components/Sidebar/Sidebar.tsx
 import React from 'react';
-import appLogo from '../../assets/nivoice-app-logo.png'
+import appLogo from '../../assets/nivoice-app-logo.png';
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -15,41 +16,64 @@ const Sidebar = () => {
       </div>
       <ul className="mt-15 space-y-4">
         <li>
-          <a 
-            href="/"
-            className="block p-2 hover:bg-[#FFA015] rounded"
+          <NavLink 
+            to="/"
+            className={({ isActive }: { isActive: boolean }) =>
+              `block p-2 rounded ${
+                isActive ? "bg-[#FFA015] text-white" : "hover:bg-[#FFA015] text-white"
+              }`
+            }
           >
             Dashboard
-          </a>
+            </NavLink>
         </li>
         <li>
-          <a
-            href="/login"
-            className="block p-2 hover:bg-[#FFA015] rounded"
+          <NavLink
+            to="/login"
+            className={({ isActive }: { isActive: boolean }) =>
+              `block p-2 rounded ${
+                isActive ? "bg-[#FFA015] text-white" : "hover:bg-[#FFA015] text-white"
+              }`
+            }
           >
             Login
-          </a>
+          </NavLink>
         </li>        
         <li>
-          <a
-            href="/invoices"
-            className="block p-2 hover:bg-[#FFA015] rounded">Invoices</a>
+          <NavLink
+            to="/invoices"
+            className={({ isActive }: { isActive: boolean }) =>
+              `block p-2 rounded ${
+                isActive ? "bg-[#FFA015] text-white" : "hover:bg-[#FFA015] text-white"
+              }`
+            }
+          >
+            Invoices
+          </NavLink>
         </li>
         <li>
-          <a
-            href="/register"
-            className="block p-2 hover:bg-[#FFA015] rounded"
+          <NavLink
+            to="/register"
+            className={({ isActive }: { isActive: boolean }) =>
+              `block p-2 rounded ${
+                isActive ? "bg-[#FFA015] text-white" : "hover:bg-[#FFA015] text-white"
+              }`
+            }
           >
             Register
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a
-            href="/users"
-            className="block p-2 hover:bg-[#FFA015] rounded"
+          <NavLink
+            to="/users"
+            className={({ isActive }: { isActive: boolean }) =>
+              `block p-2 rounded ${
+                isActive ? "bg-[#FFA015] text-white" : "hover:bg-[#FFA015] text-white"
+              }`
+            }
           >
             Users
-          </a>
+          </NavLink>
         </li>        
       </ul>
     </aside>
