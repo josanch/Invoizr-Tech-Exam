@@ -57,10 +57,10 @@ const Home = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto mt-6">
-        <h2 className="text-2xl font-bold mb-6">Welcome to Invoice App</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <h2 className="text-2xl font-bold mb-6 pl-4">Dashboard</h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-y-6 gap-x-16 mx-auto max-w-4xl">
           {/* User Counts Widget */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
+          <div className="p-4 bg-white rounded-lg shadow-md w-[300px]">
             <h3 className="text-lg font-semibold text-gray-700">User Counts</h3>
             <p className="mt-2 text-3xl font-bold text-blue-500">
               {usersQuery.isSuccess ? usersQuery.data : 0}
@@ -68,7 +68,7 @@ const Home = () => {
           </div>
 
           {/* Invoice Counts Widget */}
-          <div className="p-4 bg-white rounded-lg shadow-md">
+          <div className="p-4 bg-white rounded-lg shadow-md w-[300px]">
             <h3 className="text-lg font-semibold text-gray-700">Invoice Counts</h3>
             <p className="mt-2 text-3xl font-bold text-blue-500">
               {invoicesQuery.isSuccess ? invoicesQuery.data : 0}

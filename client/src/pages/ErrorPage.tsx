@@ -30,7 +30,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ message, redirectTo }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="p-6 bg-white shadow-md rounded-lg text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Error</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Message</h2>
         <p className="text-gray-600 mb-6">{message}</p>
         {redirectTo && (
           <button

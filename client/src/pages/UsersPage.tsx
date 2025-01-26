@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import { useQuery } from '@tanstack/react-query'
 import {
@@ -23,7 +24,7 @@ const fetchUsers = async () => {
                 },
             },
         );
-        
+        console.log(response);
         if (!response.ok) {
           throw new Error('Failed to fetch Users');
         }
@@ -35,18 +36,33 @@ const fetchUsers = async () => {
 };
 
 const UsersPage: React.FC = () => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     document.title = "Profile";
   }, []);
 
+  useEffect(() => {
+    if (!token) {
+      // Redirect if no token
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  if (!token) {
+    // Prevent rendering page if no token
+    return null;
+  }
+  
   // Fetch data using React Query
   const { data: users, isLoading, isError, error } = useQuery({
     queryKey: ['users'],
     queryFn: fetchUsers,
+    enabled: !!token,
   });
 
- // Define columns for the table
+ // Define table columns 
  const columnHelper = createColumnHelper<any>();
 
  const columns = [
@@ -75,22 +91,22 @@ const UsersPage: React.FC = () => {
     getCoreRowModel: getCoreRowModel(),
   });
 
-  if(isLoading === true && isError === false){
-    return null;
-  }
+  // if(isLoading !== true && isError == false){
+  //   return null;
+  // }
 
-  if (isLoading){
-    return( 
-        <Layout>
-            <ErrorPage message="Loading Users... " redirectTo="/login" />
-        </Layout>
+  if (isLoading) {
+    return (
+      <Layout>
+        <p>Loading Users...</p>
+      </Layout>
     );
   }
-  
+
   if (isError){
     return(
         <Layout>
-            <ErrorPage message="An error occurred" redirectTo='/login' />
+            <ErrorPage message={error?.message || 'An error occurred'} redirectTo="/login" />
         </Layout>
     );
   }
