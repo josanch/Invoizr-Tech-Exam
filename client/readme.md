@@ -16,8 +16,8 @@ This is the client-side application for the project, built using ReactJS with Ty
 ### Prerequisites
 
 Ensure you have the following installed on your machine:
-- Node.js (v16+ recommended)
-- npm or yarn package manager
+- Node.js (v22+ recommended)
+- npm manager
 
 ## Technologies Used
 - React (with TypeScript)
