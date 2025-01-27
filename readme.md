@@ -23,6 +23,14 @@ For detailed client setup instructions, refer to the [client readme](./client/re
 2. Follow the server setup instructions in `server/README.md`.
 3. Follow the client setup instructions in `client/readme.md`.
 4. Ensure both the server and client are running.
+6. From root of project folder run npm install (will install Playwright)
+      ```
+      npm install
+      ```
+7. Run Playwright test from root of project
+   ```
+   npx playwright test
+   ```
 
 ## User Login
 Email: john@example.com
@@ -33,6 +41,9 @@ Password: 1234567
 root/
 ├── client/               # Client-side application
 ├── server/               # Server-side application
+├── tests/                # Playwright test folder
+├── tests/client          # Playwright client test folder
+├── tests/server          # Playwright server test folder
 ├── docker-compose.yml    # Docker setup for the database
 └── README.md             # This file
 ```

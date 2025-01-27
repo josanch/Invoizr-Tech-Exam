@@ -34,6 +34,7 @@ This is the server-side application for the **Invoyce Tech Exam** project. Built
 
 ### Prerequisites
 - Node.js (v22+)
+- npm manager
 - Docker & Docker Compose
 
 ### Steps
@@ -50,23 +51,28 @@ This is the server-side application for the **Invoyce Tech Exam** project. Built
 
 3. Create a `.env` file:
    ```plaintext
+   # Create empty file
+   touch .env
+
+   # Edit .env using nano or preferred editor
+   # add the following snippet to .env file
    DATABASE_URL="postgresql://puseradm:wAXBy8EjLL3256V@localhost:5432/code-test-db"
 
    ```
 
 4. Start PostgreSQL using Docker:
    ```bash
+   # Go back to mono root
+   cd ..
+   # Run Docker Compose
    docker-compose up -d
    ```
 
 5. Run Prisma migrations:
    ```bash
+   # Go back to server folder
+   cd server
    npx prisma migrate dev --name init
-   ```
-
-6. Start the server:
-   ```bash
-   npm run start:dev
    ```
 
 6. Seed the database:
@@ -78,16 +84,14 @@ This is the server-side application for the **Invoyce Tech Exam** project. Built
    
    ```
 
+7. Start the server:
+   ```bash
+   npm run start:dev
+   ```
+
 ### Notes
 - Ensure the `.env` file is properly configured before running the server.
 - Error handling has been implemented minimally to meet project requirements.
-
-### Docker Setup
-
-1. Run the Docker container:
-   ```bash
-   docker run -p 5432:5432 postgress:15
-   ```
 
 ## Setup Instructions Condensed
 
@@ -97,9 +101,9 @@ This is the server-side application for the **Invoyce Tech Exam** project. Built
 2. Navigate to the `server` directory.
 3. Run `npm install` to install dependencies.
 4. From the root of the project folder, run `docker-compose up -d` to start the database.
-5. Run `npx prisma migrate init` to initialize the database.
-6. Run `npm run db:seeduser` to seed user data.
-7. Run `npm run db:seedInvoices` to seed invoice data.
+5. From the server folder, run `npx prisma migrate init` to initialize the database.
+6. In server folder run `npm run db:seeduser` to seed user data.
+7. In server folder run `npm run db:seedInvoices` to seed invoice data.
 8. Start the server with `npm run start:dev`.
 
 
